@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user_account_id: 1
+  doctor_id: 1
+  is_review_anonymous: MyString
+  wait_time_rating: 1
+  bedside_manner_rating: 1
+  overall_rating: 1
+  review: MyString
+  is_doctor_recommended: MyString
+  review_date: 2023-02-02
+
+two:
+  id: 1
+  user_account_id: 1
+  doctor_id: 1
+  is_review_anonymous: MyString
+  wait_time_rating: 1
+  bedside_manner_rating: 1
+  overall_rating: 1
+  review: MyString
+  is_doctor_recommended: MyString
+  review_date: 2023-02-02

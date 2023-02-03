@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user_account_id: 1
+  office_id: 1
+  probable_start_time: 2023-02-03 15:49:30
+  actual_end_time: 2023-02-03 15:49:30
+  appointment_status_id: 1
+  appointment_taken_date: 2023-02-03
+  app_booking_channel_id: 1
+
+two:
+  id: 1
+  user_account_id: 1
+  office_id: 1
+  probable_start_time: 2023-02-03 15:49:30
+  actual_end_time: 2023-02-03 15:49:30
+  appointment_status_id: 1
+  appointment_taken_date: 2023-02-03
+  app_booking_channel_id: 1
