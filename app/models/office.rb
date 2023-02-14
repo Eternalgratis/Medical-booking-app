@@ -1,7 +1,6 @@
 class Office < ApplicationRecord
-    has_many :office_doctor_availability
-    has_many :in_network_insurance
-    has_many :appointment
-    belongs_to :doctor
-    belongs_to :hospital_affiliation
+    has_many :office_doctor_availability, :in_network_insurance, :appointment
+    belongs_to :doctor, :hospital_affiliation
+    validates: :time_slot_per_client_in_min, :first_consultation_fee, 
+    :followup_consultation_fee, :street_address, :city, :state, :country, presence:true
 end
