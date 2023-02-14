@@ -1,5 +1,3 @@
 class DoctorSpecialization < ApplicationRecord
-    belongs_to :doctor
-    belongs_to :specialization
-    belongs_to :specialization through: :doctor_specialization
+    belongs_to :doctor, :specialization, :specialization through: :doctor_specialization
 end
