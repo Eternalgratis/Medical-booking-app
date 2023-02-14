@@ -1,4 +1,4 @@
 class ClientReview < ApplicationRecord
-    belongs_to :client_account
-    belongs_to :doctor
+    belong_to :doctor, through: :clients
+    belong_to :client, through: :doctors
 end
