@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# :nodoc:
+
 class CreateHospitalAffiliations < ActiveRecord::Migration[7.0]
   def change
     create_table :hospital_affiliations do |t|

@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# :nodoc:
+
 class CreateOfficeDoctorAvailabilities < ActiveRecord::Migration[7.0]
   def change
     create_table :office_doctor_availabilities do |t|

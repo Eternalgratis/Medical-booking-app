@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# :nodoc:
+
 class CreateDoctorSpecializations < ActiveRecord::Migration[7.0]
   def change
     create_table :doctor_specializations do |t|

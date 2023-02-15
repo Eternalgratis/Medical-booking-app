@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# :nodoc:
+
 class CreateClientAccounts < ActiveRecord::Migration[7.0]
   def change
     create_table :client_accounts do |t|
