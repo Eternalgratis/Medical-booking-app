@@ -1,0 +1,2 @@
+class AppBookingAppointment < ApplicationRecord
+end

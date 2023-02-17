@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  doctor_id: 1
+  hospital_affiliation_id: 1
+  time_slot_per_client_in_min: 1
+  first_consultation_fee: 1
+  followup_consultation_fee: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  zip: MyString
+
+two:
+  id: 1
+  doctor_id: 1
+  hospital_affiliation_id: 1
+  time_slot_per_client_in_min: 1
+  first_consultation_fee: 1
+  followup_consultation_fee: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  zip: MyString
