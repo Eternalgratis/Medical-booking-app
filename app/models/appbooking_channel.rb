@@ -1,2 +1,0 @@
-class AppbookingChannel < ApplicationRecord
-end
