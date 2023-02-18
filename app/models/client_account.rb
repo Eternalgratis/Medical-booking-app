@@ -3,6 +3,6 @@
 
 class ClientAccount < ApplicationRecord
     has_many :doctors through: :client_review, :client_reviews
-    has_one :appointment
+    has_many :appointments
     validates :first_name, :last_name, :contact_number, :email, presence:true
 end

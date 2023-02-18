@@ -7,7 +7,6 @@
 class CreateClientReviews < ActiveRecord::Migration[7.0]
   def change
     create_table :client_reviews do |t|
-      t.integer :id
       t.integer :user_account_id
       t.integer :doctor_id
       t.string :is_review_anonymous

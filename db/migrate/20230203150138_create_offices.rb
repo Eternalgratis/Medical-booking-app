@@ -7,7 +7,6 @@
 class CreateOffices < ActiveRecord::Migration[7.0]
   def change
     create_table :offices do |t|
-      t.integer :id
       t.integer :doctor_id
       t.integer :hospital_affiliation_id
       t.integer :time_slot_per_client_in_min
