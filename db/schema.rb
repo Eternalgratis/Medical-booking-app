@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_03_213350) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_18_230909) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "app_booking_channels", force: :cascade do |t|
+    t.string "app_booking_channel_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "appointment_statuses", force: :cascade do |t|
     t.string "status"
@@ -142,4 +148,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_03_213350) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "appointments", "appointment_statuses"
+  add_foreign_key "appointments", "client_accounts"
+  add_foreign_key "appointments", "offices"
 end
