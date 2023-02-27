@@ -3,5 +3,5 @@
 # Iy contains infomation about the time, date and details of the doctor
 
 class Appointment < ApplicationRecord
-  belongs_to :appointment_status, :app_booking_channel, :office, :client_accounts
+  belongs_to :appointment_status, :app_booking_channels, :office, :client_accounts
 end
