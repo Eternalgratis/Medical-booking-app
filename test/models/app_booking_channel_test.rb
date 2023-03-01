@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class OfficeTest < ActiveSupport::TestCase
+class AppBookingChannelTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
