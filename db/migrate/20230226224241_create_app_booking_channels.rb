@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAppBookingChannels < ActiveRecord::Migration[7.0]
   def change
     create_table :app_booking_channels do |t|
