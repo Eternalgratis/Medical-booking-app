@@ -2,7 +2,12 @@
 # Iy contains infomation about the time, date and details of the doctor
 
 class ClientAccount < ApplicationRecord
-    has_many :doctors through: :client_review, :client_reviews
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+    has_many :client_reviews, through: :doctors
     has_many :appointments
     validates :first_name, :last_name, :contact_number, :email, presence:true
 end

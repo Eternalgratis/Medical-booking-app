@@ -5,6 +5,7 @@
 # are not: uncommented lines are intended to protect your configuration from
 # breaking changes in upgrades (i.e., in the event that future versions of
 # Devise change the default values for those options).
+#
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -13,9 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # rubocop:disable Layout/LineLength
-  # config.secret_key = '00172aeb004d146fe5c98b5d29d1aa7aa21be73190430d24378f40347db8ed09fc5e2e1e47f365fa131aa3638e5232c0cd12f3b4771d286fa4f3041bd2e6705f'
-  # rubocop:enable Layout/LineLength
+  # config.secret_key = 'aa0abc126c571e085c9e439c227ff813f482aba6342dade42d6e20f4643bda4f4d14ae91b8579c247faeaa00c6e096b5e4a5fe1d8ee1583f8e80c8ba743e368c'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -127,9 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # rubocop:disable Layout/LineLength
-  # config.pepper = 'a492dbacc36db989e4a1c58b6a56b612a09a46e700a6174ab65c46f227b6748e75177495cd5080698db38f2b7e1bffaf5a0e1955add9a2bf9bf697968893e5c9'
-  # rubocop:enable Layout/LineLength
+  # config.pepper = '0eec5ac51ab798a148a9d1d5111be6006ef2defe240370f42eadc0772db179ee048f54bdbb34e314fd3a0bf94ae634678faa699d5062fba7ad11a33446161b06'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -259,14 +256,14 @@ Devise.setup do |config|
 
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
-  # :html, should redirect to the sign in page when the user does not have
+  # :html should redirect to the sign in page when the user does not have
   # access, but formats like :xml or :json, should return 401.
   #
   # If you have any extra navigational formats, like :iphone or :mobile, you
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+  # config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -299,12 +296,14 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  # ==> Turbolinks configuration
-  # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
-  #
-  # ActiveSupport.on_load(:devise_failure_app) do
-  #   include Turbolinks::Controller
-  # end
+  # ==> Hotwire/Turbo configuration
+  # When using Devise with Hotwire/Turbo, the http status for error responses
+  # and some redirects must match the following. The default in Devise for existing
+  # apps is `200 OK` and `302 Found respectively`, but new apps are generated with
+  # these new defaults that match Hotwire/Turbo behavior.
+  # Note: These might become the new default in future versions of Devise.
+  config.responder.error_status = :unprocessable_entity
+  config.responder.redirect_status = :see_other
 
   # ==> Configuration for :registerable
 

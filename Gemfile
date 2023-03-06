@@ -18,7 +18,6 @@ gem 'pg', '~> 1.1'
 
 # Use the devise gem as the session and account manager for the application
 gem 'devise'
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 

@@ -1,15 +1,10 @@
 # frozen_string_literal: true
 
-# This is a class that represents an appointment made by a client to see a doctor
-# Iy contains infomation about the time, date and details of the doctor
-
-
-class DeviseCreateClients < ActiveRecord::Migration[7.0]
-  def change
-    create_table :clients do |t|
+class AddDeviseToClientAccounts < ActiveRecord::Migration[7.0]
+  def self.up
+    change_table :client_accounts do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ''
-      t.string :encrypted_password, null: false, default: ''
+      t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
@@ -36,12 +31,20 @@ class DeviseCreateClients < ActiveRecord::Migration[7.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.timestamps null: false
+
+      # Uncomment below if timestamps were not included in your original model.
+      # t.timestamps null: false
     end
 
-    add_index :clients, :email,                unique: true
-    add_index :clients, :reset_password_token, unique: true
-    # add_index :clients, :confirmation_token,   unique: true
-    # add_index :clients, :unlock_token,         unique: true
+    add_index :client_accounts, :email,                unique: true
+    add_index :client_accounts, :reset_password_token, unique: true
+    # add_index :client_accounts, :confirmation_token,   unique: true
+    # add_index :client_accounts, :unlock_token,         unique: true
+  end
+
+  def self.down
+    # By default, we don't want to make any assumption about how to roll back a migration when your
+    # model already existed. Please edit below which fields you would like to remove in this migration.
+    raise ActiveRecord::IrreversibleMigration
   end
 end

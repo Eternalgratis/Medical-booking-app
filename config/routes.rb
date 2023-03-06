@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :clients
+  devise_for :client_accounts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'api/v1/auth/login', to: 'authentication#login'
   namespace :api do
     namespace :v1 do
-      resources :clients, only: [:index]
+      resources :appointment
     end
   end  
 end

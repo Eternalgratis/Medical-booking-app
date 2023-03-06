@@ -4,8 +4,8 @@
 # Iy contains infomation about the time, date and details of the doctor
 
 class ClientReview < ApplicationRecord
-  belong_to :doctor, through: :clients
-  belong_to :client, through: :doctors
+  belong_to :doctor, through: :client_accounts
+  belong_to :client_account, through: :doctors
   validates :is_review_anonymous, :wait_time_waiting, :bedside_manner_rating,
             :overall_rating, :review, :is_doctor_recommended, :review_date, presence: true
 end
