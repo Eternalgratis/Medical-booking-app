@@ -6,10 +6,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-    clients = Client.create
-    (
-      {first_name: "Titilope"}, 
-      {last_name: "Apuabi"}, 
-      {contact_number: "123456"},
-      {email: "tyaps002@gmail.com"}
-     )
+    client_account = ClientAccount.create(
+        first_name: 'Titilope', 
+        last_name: 'Apuabi', 
+        contact_number: '123456', 
+        email: 'tyaps002@gmail.com'
+    ) 
