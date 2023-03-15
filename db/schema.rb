@@ -14,6 +14,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_222715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "app_booking_channels", force: :cascade do |t|
+    t.string "app_booking_channel_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "appointment_statuses", force: :cascade do |t|
     t.string "status"
     t.datetime "created_at", null: false
@@ -59,6 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_222715) do
     t.date "review_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "client_account_id", null: false
+    t.index ["client_account_id"], name: "index_client_reviews_on_client_account_id"
   end
 
   create_table "doctor_specializations", force: :cascade do |t|
@@ -136,9 +144,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_222715) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "appointments", "app_booking_channels"
+  add_foreign_key "appointments", "appointment_statuses"
+  add_foreign_key "appointments", "client_accounts"
+  add_foreign_key "appointments", "offices"
+  add_foreign_key "client_reviews", "client_accounts"
+  add_foreign_key "client_reviews", "doctors"
   add_foreign_key "doctor_specializations", "doctors"
   add_foreign_key "doctor_specializations", "specializations"
   add_foreign_key "in_network_insurances", "offices"
   add_foreign_key "office_doctor_availabilities", "offices"
+  add_foreign_key "offices", "doctors"
+  add_foreign_key "offices", "hospital_affiliations"
   add_foreign_key "qualifications", "doctors"
 end
